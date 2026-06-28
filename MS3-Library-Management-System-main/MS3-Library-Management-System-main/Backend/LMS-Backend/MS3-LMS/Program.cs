@@ -6,11 +6,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using MS3_LMS.IRepository;
-using MS3_LMS.IService;
+using MS3_LMS.IRepository.V1;
+using MS3_LMS.IService.V1;
 using MS3_LMS.LMSDbcontext;
 using MS3_LMS.Models.RequestModel;
-using MS3_LMS.Repository;
-using MS3_LMS.Service;
+using MS3_LMS.Repository.V1;
+using MS3_LMS.Service.V1;
 using System.Text;
 
 namespace MS3_LMS
@@ -102,12 +103,12 @@ namespace MS3_LMS
             builder.Services.AddScoped<IBookLendService, BookLendService>();
             builder.Services.AddScoped<INotificationRepository, Notification>();
             builder.Services.AddScoped<IAuthorService, AuthorService>();
-            builder.Services.AddScoped<IAothorRepository ,MS3_LMS.Repository.Author >();
+            builder.Services.AddScoped<IAothorRepository , Author>();
             builder.Services.AddScoped<IPublisherRepository,PublisherRepository>();
             builder.Services.AddScoped<IPublisherService,PublisherService>();
             builder.Services.AddScoped<IGenreRepository,GenreRepository>();
             builder.Services.AddScoped<IGenreService,GenreService>();
-            builder.Services.AddScoped<MS3_LMS.IService.ILanguageService, MS3_LMS.Service.LanguageService>();
+            builder.Services.AddScoped<IService.V1.ILanguageService, LanguageService>();
             builder.Services.AddScoped<ILanguageRepository, LanguageRepository>();
             builder.Services.AddScoped<IImageRepository, ImageRepository>();
             builder.Services.AddScoped<IImageService, ImageService>();
